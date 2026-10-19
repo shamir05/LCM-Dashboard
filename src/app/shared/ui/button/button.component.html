@@ -1,0 +1,7 @@
+@if (leadingIcon(); as icon) {
+  <app-icon [name]="icon" [size]="iconSize()" />
+}
+<ng-content />
+@if (trailingIcon(); as icon) {
+  <app-icon [name]="icon" [size]="iconSize()" />
+}

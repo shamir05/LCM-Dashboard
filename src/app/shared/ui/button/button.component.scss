@@ -1,0 +1,87 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  @include type.text-style(label-s);
+  @include mx.focus-ring;
+  @include mx.motion-safe {
+    transition:
+      background-color var(--duration-fast) ease-out,
+      border-color var(--duration-fast) ease-out,
+      color var(--duration-fast) ease-out;
+  }
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-100);
+  border-radius: var(--radius-8);
+  white-space: nowrap;
+}
+
+:host(.button--secondary) {
+  padding: var(--space-150) var(--space-200);
+  color: var(--color-text-950);
+  background-color: var(--color-bg-white);
+  border: var(--border-width-control) solid var(--color-stroke-200);
+
+  &:not(:disabled):hover {
+    background-color: var(--color-bg-50);
+  }
+
+  &:not(:disabled):active {
+    background-color: var(--color-bg-soft-200);
+  }
+}
+
+:host(.button--tinted) {
+  padding: var(--space-200) var(--space-250);
+  color: var(--color-brand-700);
+  background-color: var(--color-brand-alpha-10);
+
+  &:not(:disabled):hover {
+    background-color: var(--color-brand-alpha-16);
+  }
+
+  &:not(:disabled):active {
+    color: var(--color-brand-800);
+    background-color: var(--color-brand-alpha-16);
+  }
+}
+
+:host(.button--icon) {
+  width: var(--size-control-md);
+  height: var(--size-control-md);
+  color: var(--color-icon-950);
+  background-color: var(--color-bg-50);
+
+  &:not(:disabled):hover {
+    background-color: var(--color-bg-soft-200);
+  }
+
+  &:not(:disabled):active {
+    background-color: var(--color-bg-sub-300);
+  }
+}
+
+:host(.button--icon-ghost) {
+  width: var(--size-control-sm);
+  height: var(--size-control-sm);
+  color: var(--color-icon-950);
+  border-radius: var(--radius-4);
+
+  &:not(:disabled):hover {
+    background-color: var(--color-bg-50);
+  }
+
+  &:not(:disabled):active {
+    background-color: var(--color-bg-soft-200);
+  }
+}
+
+:host(:disabled) {
+  color: var(--color-text-400);
+  background-color: var(--color-bg-50);
+  border-color: var(--color-stroke-200);
+}
