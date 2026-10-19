@@ -1,0 +1,4 @@
+<h1 class="welcome-header__title">{{ title() }}</h1>
+<time class="welcome-header__date" [attr.datetime]="welcome().date">
+  {{ welcome().date | date: dateFormat }}
+</time>
