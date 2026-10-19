@@ -78,10 +78,12 @@
   @include type.text-style(label-xl);
 }
 
+// Reserves the dot row on every day so all tiles share one height.
 .week-strip__dots {
   display: flex;
+  align-items: center;
   gap: var(--space-50);
-  padding-top: var(--space-50);
+  height: calc(var(--size-event-dot) + var(--space-50) * 2);
 }
 
 .week-strip__dot {

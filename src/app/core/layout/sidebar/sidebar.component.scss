@@ -24,7 +24,8 @@
   align-items: center;
   justify-content: space-between;
   min-height: var(--topbar-height);
-  padding: var(--space-300) var(--space-400);
+  @include mx.inset-border-padding(var(--space-300), var(--space-400));
+
   border-bottom: var(--border-width-default) solid var(--color-stroke-200);
 }
 
