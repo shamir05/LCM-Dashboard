@@ -14,6 +14,8 @@ export const SIDEBAR_LABELS = {
   collapse: 'Collapse sidebar',
   expand: 'Expand sidebar',
   mainNav: 'Main',
+  secondaryNav: 'Secondary',
+  profileOptions: 'Profile options',
 } as const;
 
 export const DOWNLOAD_LABEL = 'Download';

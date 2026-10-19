@@ -28,4 +28,35 @@
       }
     </ul>
   </nav>
+
+  <div class="sidebar__footer">
+    <nav [attr.aria-label]="labels.secondaryNav">
+      <ul>
+        @for (link of footerItems; track link.route) {
+          <li>
+            <app-nav-item [link]="link" />
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="sidebar__profile">
+      <img
+        class="sidebar__avatar"
+        [ngSrc]="user.avatarUrl"
+        width="24"
+        height="24"
+        alt=""
+        [attr.title]="collapsed() ? user.name : null"
+      />
+      <span class="sidebar__user-name">{{ user.name }}</span>
+      <button
+        app-button
+        variant="icon-ghost"
+        leadingIcon="more-vertical"
+        class="sidebar__profile-options"
+        [attr.aria-label]="labels.profileOptions"
+      ></button>
+    </div>
+  </div>
 </aside>
