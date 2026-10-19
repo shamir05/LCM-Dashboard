@@ -1,0 +1,50 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  @include mx.list-item-surface;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+}
+
+.event-item__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.event-item__title {
+  @include type.text-style(label-m);
+
+  overflow: hidden;
+  color: var(--color-text-950);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-item__time {
+  @include type.text-style(paragraph-s);
+
+  color: var(--color-text-600);
+}
+
+.event-item__meet {
+  @include mx.focus-ring;
+  @include mx.motion-safe {
+    transition: background-color var(--duration-fast) ease-out;
+  }
+
+  display: flex;
+  flex-shrink: 0;
+  padding: var(--space-150) var(--space-250);
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-12);
+
+  &:hover {
+    background-color: var(--color-bg-50);
+  }
+}
