@@ -1,0 +1,40 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  @include type.text-style(paragraph-s);
+  @include mx.focus-ring;
+  @include mx.motion-safe {
+    transition:
+      background-color var(--duration-fast) ease-out,
+      color var(--duration-fast) ease-out;
+  }
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-150);
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--space-100);
+  color: var(--color-brand-500);
+  background-color: var(--color-bg-white);
+  border: var(--border-width-default) solid var(--color-gray-200);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-xs);
+
+  &:hover {
+    color: var(--color-brand-700);
+    background-color: var(--color-bg-50);
+  }
+
+  &:active {
+    background-color: var(--color-brand-alpha-10);
+  }
+}
+
+.link-chip__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
