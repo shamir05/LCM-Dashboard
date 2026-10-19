@@ -1,0 +1,11 @@
+<div class="stat-card__header">
+  <span class="stat-card__icon-tile">
+    <app-icon [name]="stat().icon" [size]="iconSize" />
+  </span>
+  <span class="stat-card__label">{{ stat().label }}</span>
+</div>
+
+<div class="stat-card__body">
+  <span class="stat-card__value">{{ formattedValue() }}</span>
+  <app-trend-chip [direction]="stat().trend.direction" [percent]="stat().trend.percent" />
+</div>
