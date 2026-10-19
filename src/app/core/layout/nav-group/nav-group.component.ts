@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, inject, input, linkedSignal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  linkedSignal,
+} from '@angular/core';
 import { NavGroup } from '../../models/nav-item.model';
 import { IconComponent } from '../../../shared/ui/icon/icon.component';
 import { LayoutService } from '../layout.service';
@@ -23,6 +30,7 @@ export class NavGroupComponent {
 
   protected readonly collapsed = this.layout.sidebarCollapsed;
   protected readonly expanded = linkedSignal(() => this.group().expanded ?? false);
+  protected readonly isOpen = computed(() => this.expanded() && !this.collapsed());
   protected readonly listId = `nav-group-${nextGroupId++}`;
 
   protected toggle(): void {

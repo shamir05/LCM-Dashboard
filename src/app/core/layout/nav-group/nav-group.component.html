@@ -1,7 +1,7 @@
 <button
   class="nav-group__toggle"
   type="button"
-  [attr.aria-expanded]="expanded()"
+  [attr.aria-expanded]="isOpen()"
   [attr.aria-controls]="listId"
   [attr.title]="collapsed() ? group().label : null"
   (click)="toggle()"
@@ -11,7 +11,7 @@
   <app-icon class="nav-group__chevron" name="chevron-down" />
 </button>
 
-<ul class="nav-group__list" [id]="listId" [hidden]="!expanded() || collapsed()">
+<ul class="nav-group__list" [id]="listId" [hidden]="!isOpen()">
   @for (child of group().children; track child.route) {
     <li>
       <app-nav-item [link]="child" />

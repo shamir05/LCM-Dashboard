@@ -31,7 +31,7 @@
 
   <div class="sidebar__footer">
     <nav [attr.aria-label]="labels.secondaryNav">
-      <ul>
+      <ul class="sidebar__footer-list">
         @for (link of footerItems; track link.route) {
           <li>
             <app-nav-item [link]="link" />
