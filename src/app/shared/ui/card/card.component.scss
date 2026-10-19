@@ -71,3 +71,8 @@
     color: var(--color-brand-800);
   }
 }
+
+// Comes last so it also overrides the AI tone header border.
+:host(.card--collapsed) .card__header {
+  border-bottom-color: transparent;
+}

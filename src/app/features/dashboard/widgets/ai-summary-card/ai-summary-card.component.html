@@ -1,0 +1,19 @@
+<app-card #card [title]="summary().title" icon="ai-sparkle" tone="ai" [collapsed]="!expanded()">
+  <button
+    app-button
+    cardAction
+    [attr.aria-expanded]="expanded()"
+    [attr.aria-controls]="card.bodyId"
+    (click)="toggle()"
+  >
+    {{ toggleLabel() }}
+    <app-icon
+      class="ai-summary-card__chevron"
+      [class.ai-summary-card__chevron--expanded]="expanded()"
+      name="chevron-down"
+      [size]="chevronSize"
+    />
+  </button>
+
+  <p class="ai-summary-card__text">{{ summary().summary }}</p>
+</app-card>

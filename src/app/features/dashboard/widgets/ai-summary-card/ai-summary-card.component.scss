@@ -1,0 +1,23 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.ai-summary-card__chevron {
+  @include mx.motion-safe {
+    transition: transform var(--duration-medium) ease-out;
+  }
+}
+
+.ai-summary-card__chevron--expanded {
+  transform: rotate(180deg);
+}
+
+.ai-summary-card__text {
+  @include type.text-style(paragraph-s);
+
+  color: var(--color-brand-800);
+}
