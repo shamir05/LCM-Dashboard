@@ -10,6 +10,7 @@ export type IconName =
   | 'chat'
   | 'checklist'
   | 'chevron-down'
+  | 'chevron-right'
   | 'chevrons-right'
   | 'clipboard'
   | 'clock'

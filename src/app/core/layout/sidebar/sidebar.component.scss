@@ -1,0 +1,103 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  display: block;
+}
+
+.sidebar {
+  @include mx.thin-scrollbar;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--color-bg-white);
+  border-right: var(--border-width-default) solid var(--color-stroke-200);
+}
+
+.sidebar__header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--topbar-height);
+  padding: var(--space-300) var(--space-400);
+  border-bottom: var(--border-width-default) solid var(--color-stroke-200);
+}
+
+.sidebar__logo {
+  @include mx.focus-ring;
+
+  display: flex;
+  border-radius: var(--radius-4);
+}
+
+.sidebar__nav {
+  padding-inline: var(--space-400);
+}
+
+.sidebar__toggle {
+  @include mx.motion-safe {
+    transition: transform var(--duration-medium) ease-out;
+  }
+}
+
+.sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding: 0 var(--space-400) var(--space-200);
+}
+
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  padding: var(--space-200) var(--space-250);
+}
+
+.sidebar__avatar {
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: var(--radius-6);
+}
+
+.sidebar__user-name {
+  @include type.text-style(label-s);
+
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-600);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// The 24px button is larger than Figma's 16px icon; keep the row height unchanged.
+.sidebar__profile-options {
+  margin-block: calc(var(--space-100) * -1);
+}
+
+:host(.sidebar--collapsed) {
+  .sidebar__header,
+  .sidebar__profile {
+    justify-content: center;
+  }
+
+  .sidebar__profile {
+    padding-inline: 0;
+  }
+
+  .sidebar__logo,
+  .sidebar__user-name,
+  .sidebar__profile-options {
+    display: none;
+  }
+
+  .sidebar__toggle {
+    transform: rotate(180deg);
+  }
+}

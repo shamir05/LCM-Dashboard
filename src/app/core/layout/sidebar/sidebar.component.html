@@ -1,0 +1,62 @@
+<aside id="sidebar" class="sidebar" [attr.aria-label]="labels.sidebar">
+  <div class="sidebar__header">
+    <a class="sidebar__logo" routerLink="/dashboard" [attr.aria-label]="labels.homeLink">
+      <img ngSrc="images/logo.svg" width="85" height="28" alt="" priority />
+    </a>
+    <button
+      app-button
+      variant="icon-ghost"
+      leadingIcon="chevrons-right"
+      class="sidebar__toggle"
+      aria-controls="sidebar"
+      [attr.aria-expanded]="!collapsed()"
+      [attr.aria-label]="toggleLabel()"
+      (click)="toggle()"
+    ></button>
+  </div>
+
+  <nav class="sidebar__nav" [attr.aria-label]="labels.mainNav">
+    <ul class="sidebar__nav-list">
+      @for (item of mainItems; track item.label) {
+        <li>
+          @if (isGroup(item)) {
+            <app-nav-group [group]="item" />
+          } @else {
+            <app-nav-item [link]="item" />
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="sidebar__footer">
+    <nav [attr.aria-label]="labels.secondaryNav">
+      <ul class="sidebar__footer-list">
+        @for (link of footerItems; track link.route) {
+          <li>
+            <app-nav-item [link]="link" />
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="sidebar__profile">
+      <img
+        class="sidebar__avatar"
+        [ngSrc]="user.avatarUrl"
+        width="24"
+        height="24"
+        alt=""
+        [attr.title]="collapsed() ? user.name : null"
+      />
+      <span class="sidebar__user-name">{{ user.name }}</span>
+      <button
+        app-button
+        variant="icon-ghost"
+        leadingIcon="more-vertical"
+        class="sidebar__profile-options"
+        [attr.aria-label]="labels.profileOptions"
+      ></button>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,37 @@
+@use 'mixins' as mx;
+@use '../nav';
+
+:host {
+  display: block;
+}
+
+.nav-item {
+  @include nav.row;
+}
+
+.nav-item--nested {
+  padding-inline-start: var(--space-800);
+}
+
+.nav-item--active {
+  color: var(--color-text-950);
+  background-color: var(--color-bg-soft-200);
+
+  &:hover {
+    background-color: var(--color-bg-soft-200);
+  }
+}
+
+.nav-item__label {
+  @include nav.label;
+}
+
+:host(.nav-item--collapsed) {
+  .nav-item {
+    @include nav.collapsed-row;
+  }
+
+  .nav-item__label {
+    @include mx.visually-hidden;
+  }
+}

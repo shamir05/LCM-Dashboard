@@ -1,0 +1,81 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  display: block;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-400);
+  min-height: var(--topbar-height);
+  padding: var(--space-200) var(--space-800);
+  background-color: var(--color-bg-white);
+  border-bottom: var(--border-width-default) solid var(--color-stroke-200);
+}
+
+.topbar__breadcrumb {
+  min-width: 0;
+}
+
+.topbar__breadcrumb-list {
+  @include type.text-style(label-s);
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  min-width: 0;
+}
+
+.topbar__breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.topbar__breadcrumb-link {
+  @include mx.focus-ring;
+
+  color: var(--color-text-400);
+  border-radius: var(--radius-4);
+
+  &:hover {
+    color: var(--color-text-600);
+  }
+}
+
+.topbar__breadcrumb-separator {
+  color: var(--color-text-400);
+}
+
+.topbar__breadcrumb-current {
+  overflow: hidden;
+  color: var(--color-text-950);
+  text-overflow: ellipsis;
+}
+
+.topbar__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-200);
+}
+
+.topbar__notifications {
+  position: relative;
+}
+
+.topbar__unread-dot {
+  position: absolute;
+  top: var(--space-200);
+  left: var(--space-200);
+  width: var(--space-200);
+  height: var(--space-200);
+  background-color: var(--color-red-500);
+  border: var(--border-width-default) solid var(--color-bg-50);
+  border-radius: var(--radius-full);
+}

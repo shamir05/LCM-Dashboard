@@ -10,6 +10,7 @@ import calendar from '../../../../assets/icons/calendar.svg';
 import chat from '../../../../assets/icons/chat.svg';
 import checklist from '../../../../assets/icons/checklist.svg';
 import chevronDown from '../../../../assets/icons/chevron-down.svg';
+import chevronRight from '../../../../assets/icons/chevron-right.svg';
 import chevronsRight from '../../../../assets/icons/chevrons-right.svg';
 import clipboard from '../../../../assets/icons/clipboard.svg';
 import clock from '../../../../assets/icons/clock.svg';
@@ -44,6 +45,7 @@ export const ICON_REGISTRY: Readonly<Record<IconName, string>> = {
   chat,
   checklist,
   'chevron-down': chevronDown,
+  'chevron-right': chevronRight,
   'chevrons-right': chevronsRight,
   clipboard,
   clock,
