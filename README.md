@@ -1,5 +1,7 @@
 # LCM Dashboard
 
+Live preview: https://shamir05.github.io/LCM-Dashboard/
+
 The "Dashboard – Filled" screen from the LegalFlow Figma file, built in Angular 21 with plain HTML and SCSS. No UI kit, no chart library, no backend. Everything on the screen comes from static mock data.
 
 ## Running it
