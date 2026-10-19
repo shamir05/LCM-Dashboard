@@ -41,6 +41,14 @@ export const LIST_LABELS = {
   tasks: 'Upcoming tasks',
 } as const;
 
+export const EVENT_LABELS = {
+  week: 'Select a day',
+  noEvents: 'No events',
+  oneEvent: '1 event',
+  manyEvents: 'events',
+  emptyDay: 'No events scheduled for this day.',
+} as const;
+
 export const DOWNLOAD_LABEL = 'Download';
 
 export const TREND_LABELS: Readonly<Record<TrendDirection, string>> = {
