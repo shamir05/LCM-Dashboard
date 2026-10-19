@@ -1,6 +1,17 @@
 <div class="dashboard">
   <app-welcome-header [welcome]="welcome" />
   <app-kpi-row [stats]="kpiStats" />
-  <app-activities-card [card]="activitiesCard" />
-  <app-cases-card [card]="casesCard" />
+
+  <div class="dashboard__columns">
+    <div class="dashboard__column">
+      <app-activities-card [card]="activitiesCard" />
+      <app-cases-card class="dashboard__fill" [card]="casesCard" />
+    </div>
+
+    <div class="dashboard__column">
+      <app-ai-summary-card [summary]="aiSummary" />
+      <app-events-card [card]="eventsCard" />
+      <app-tasks-card class="dashboard__fill" [card]="tasksCard" />
+    </div>
+  </div>
 </div>

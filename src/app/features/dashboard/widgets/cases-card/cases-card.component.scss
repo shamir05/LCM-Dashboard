@@ -1,10 +1,16 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+}
+
+.cases-card__card {
+  flex: 1;
 }
 
 .cases-card__content {
   display: flex;
+  flex: 1;
   gap: var(--space-300);
 }
 
