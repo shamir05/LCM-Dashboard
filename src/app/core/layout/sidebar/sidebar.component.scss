@@ -1,11 +1,55 @@
+@use 'mixins' as mx;
+
 :host {
   display: block;
 }
 
 .sidebar {
+  @include mx.thin-scrollbar;
+
   display: flex;
   flex-direction: column;
+  gap: var(--space-400);
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: var(--color-bg-white);
   border-right: var(--border-width-default) solid var(--color-stroke-200);
+}
+
+.sidebar__header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--topbar-height);
+  padding: var(--space-300) var(--space-400);
+  border-bottom: var(--border-width-default) solid var(--color-stroke-200);
+}
+
+.sidebar__logo {
+  @include mx.focus-ring;
+
+  display: flex;
+  border-radius: var(--radius-4);
+}
+
+.sidebar__toggle {
+  @include mx.motion-safe {
+    transition: transform var(--duration-medium) ease-out;
+  }
+}
+
+:host(.sidebar--collapsed) {
+  .sidebar__header {
+    justify-content: center;
+  }
+
+  .sidebar__logo {
+    display: none;
+  }
+
+  .sidebar__toggle {
+    transform: rotate(180deg);
+  }
 }

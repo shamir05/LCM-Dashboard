@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SKIP_LINK_LABEL } from '../../constants/labels.constants';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { LayoutService } from '../layout.service';
 import { TopbarComponent } from '../topbar/topbar.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { TopbarComponent } from '../topbar/topbar.component';
 })
 export class ShellComponent {
   protected readonly skipLinkLabel = SKIP_LINK_LABEL;
+  protected readonly sidebarCollapsed = inject(LayoutService).sidebarCollapsed;
 
   private readonly main = viewChild.required<ElementRef<HTMLElement>>('main');
 

@@ -1,1 +1,17 @@
-<aside class="sidebar"></aside>
+<aside id="sidebar" class="sidebar" [attr.aria-label]="labels.sidebar">
+  <div class="sidebar__header">
+    <a class="sidebar__logo" routerLink="/dashboard" [attr.aria-label]="labels.homeLink">
+      <img ngSrc="images/logo.svg" width="85" height="28" alt="" priority />
+    </a>
+    <button
+      app-button
+      variant="icon-ghost"
+      leadingIcon="chevrons-right"
+      class="sidebar__toggle"
+      aria-controls="sidebar"
+      [attr.aria-expanded]="!collapsed()"
+      [attr.aria-label]="toggleLabel()"
+      (click)="toggle()"
+    ></button>
+  </div>
+</aside>

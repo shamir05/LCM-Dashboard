@@ -8,6 +8,13 @@ export const PAGE_TITLES = {
 
 export const SKIP_LINK_LABEL = 'Skip to main content';
 
+export const SIDEBAR_LABELS = {
+  sidebar: 'Sidebar',
+  homeLink: `${APP_NAME} home`,
+  collapse: 'Collapse sidebar',
+  expand: 'Expand sidebar',
+} as const;
+
 export const DOWNLOAD_LABEL = 'Download';
 
 export const TREND_LABELS: Readonly<Record<TrendDirection, string>> = {

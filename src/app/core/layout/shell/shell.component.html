@@ -2,7 +2,7 @@
   {{ skipLinkLabel }}
 </a>
 
-<div class="shell">
+<div class="shell" [class.shell--collapsed]="sidebarCollapsed()">
   <app-sidebar class="shell__sidebar" />
 
   <div class="shell__main-column">

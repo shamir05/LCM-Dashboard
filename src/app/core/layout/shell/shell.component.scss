@@ -10,6 +10,14 @@
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   min-height: 100vh;
   min-height: 100dvh;
+
+  @include mx.motion-safe {
+    transition: grid-template-columns var(--duration-medium) ease-out;
+  }
+}
+
+.shell--collapsed {
+  grid-template-columns: var(--sidebar-width-collapsed) minmax(0, 1fr);
 }
 
 .shell__sidebar {
