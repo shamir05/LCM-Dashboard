@@ -1,0 +1,35 @@
+<h3 class="donut-chart__title">{{ overview().title }}</h3>
+
+<ul class="donut-chart__legend">
+  @for (segment of segments(); track segment.status) {
+    <li>
+      <app-legend-item
+        class="donut-chart__legend-item--{{ segment.status }}"
+        [label]="segment.label"
+        [count]="segment.count"
+      />
+    </li>
+  }
+</ul>
+
+<div class="donut-chart__figure" role="img" [attr.aria-label]="summary()">
+  <svg class="donut-chart__svg" [attr.viewBox]="viewBox" aria-hidden="true">
+    @for (segment of segments(); track segment.status) {
+      <circle
+        class="donut-chart__segment donut-chart__segment--{{ segment.status }}"
+        [attr.cx]="center"
+        [attr.cy]="center"
+        [attr.r]="radius"
+        [attr.stroke-width]="strokeWidth"
+        [attr.pathLength]="pathLength"
+        [attr.stroke-dasharray]="segment.dashArray"
+        [attr.stroke-dashoffset]="segment.dashOffset"
+      />
+    }
+  </svg>
+
+  <div class="donut-chart__center" aria-hidden="true">
+    <span class="donut-chart__total">{{ overview().total }}</span>
+    <span class="donut-chart__total-label">{{ overview().totalLabel }}</span>
+  </div>
+</div>

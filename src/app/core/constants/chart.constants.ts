@@ -3,6 +3,12 @@ export const ACTIVITY_CHART_SCALE = {
   tickStep: 5,
 } as const;
 
+export const DONUT_CHART_GEOMETRY = {
+  size: 184,
+  strokeWidth: 23,
+  gapPercent: 1,
+} as const;
+
 export const CHART_LABELS = {
   activitySummary:
     'Grouped bar chart of activities per day by type. Values are listed in the table that follows.',
