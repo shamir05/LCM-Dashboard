@@ -18,6 +18,14 @@ export const SIDEBAR_LABELS = {
   profileOptions: 'Profile options',
 } as const;
 
+export const TOPBAR_LABELS = {
+  breadcrumb: 'Breadcrumb',
+  aiAssistant: 'Ai Assistant',
+  search: 'Search',
+  notifications: 'Notifications',
+  unread: 'unread',
+} as const;
+
 export const DOWNLOAD_LABEL = 'Download';
 
 export const TREND_LABELS: Readonly<Record<TrendDirection, string>> = {

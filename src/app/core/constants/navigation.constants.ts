@@ -1,4 +1,7 @@
+import { BreadcrumbItem } from '../models/breadcrumb.model';
 import { NavItem, NavLink } from '../models/nav-item.model';
+
+export const BREADCRUMBS: readonly BreadcrumbItem[] = [{ label: 'Home', route: '/dashboard' }];
 
 export const MAIN_NAV_ITEMS: readonly NavItem[] = [
   { label: 'Dashboard', route: '/dashboard', icon: 'home' },

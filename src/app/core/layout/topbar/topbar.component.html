@@ -1,1 +1,40 @@
-<header class="topbar"></header>
+<header class="topbar">
+  <nav class="topbar__breadcrumb" [attr.aria-label]="labels.breadcrumb">
+    <ol class="topbar__breadcrumb-list">
+      @for (crumb of breadcrumbs; track crumb.route; let last = $last) {
+        <li class="topbar__breadcrumb-item">
+          @if (last) {
+            <span class="topbar__breadcrumb-current" aria-current="page">{{ crumb.label }}</span>
+          } @else {
+            <a class="topbar__breadcrumb-link" [routerLink]="crumb.route">{{ crumb.label }}</a>
+            <app-icon class="topbar__breadcrumb-separator" name="chevron-right" />
+          }
+        </li>
+      }
+    </ol>
+  </nav>
+
+  <div class="topbar__actions">
+    <button app-button variant="tinted" leadingIcon="ai-sparkle">
+      {{ labels.aiAssistant }}
+    </button>
+    <button
+      app-button
+      variant="icon"
+      leadingIcon="search"
+      [attr.aria-label]="labels.search"
+    ></button>
+    <button
+      app-button
+      variant="icon"
+      leadingIcon="bell"
+      class="topbar__notifications"
+      [iconSize]="bellIconSize"
+      [attr.aria-label]="notificationsLabel"
+    >
+      @if (hasUnread) {
+        <span class="topbar__unread-dot"></span>
+      }
+    </button>
+  </div>
+</header>
