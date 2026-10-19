@@ -5,6 +5,7 @@
   routerLinkActive="nav-item--active"
   ariaCurrentWhenActive="page"
   [attr.title]="collapsed() ? link().label : null"
+  (click)="closeDrawer()"
 >
   @if (link().icon; as icon) {
     <app-icon [name]="icon" />

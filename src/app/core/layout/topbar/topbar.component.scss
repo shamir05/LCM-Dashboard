@@ -14,6 +14,23 @@
   padding: var(--space-200) var(--space-800);
   background-color: var(--color-bg-white);
   border-bottom: var(--border-width-default) solid var(--color-stroke-200);
+
+  @include mx.breakpoint-down(md) {
+    padding-inline: var(--space-400);
+  }
+}
+
+.topbar__start {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  min-width: 0;
+}
+
+.topbar__menu {
+  @include mx.breakpoint-up(xl) {
+    display: none;
+  }
 }
 
 .topbar__breadcrumb {

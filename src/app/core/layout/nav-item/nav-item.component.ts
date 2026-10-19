@@ -17,5 +17,11 @@ import { LayoutService } from '../layout.service';
 export class NavItemComponent {
   readonly link = input.required<NavLink>();
 
-  protected readonly collapsed = inject(LayoutService).sidebarCollapsed;
+  private readonly layout = inject(LayoutService);
+
+  protected readonly collapsed = this.layout.sidebarCollapsed;
+
+  protected closeDrawer(): void {
+    this.layout.closeDrawer();
+  }
 }

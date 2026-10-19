@@ -7,17 +7,23 @@
 
 .shell {
   display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   min-height: 100vh;
   min-height: 100dvh;
 
-  @include mx.motion-safe {
-    transition: grid-template-columns var(--duration-medium) ease-out;
+  @include mx.breakpoint-up(xl) {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+
+    @include mx.motion-safe {
+      transition: grid-template-columns var(--duration-medium) ease-out;
+    }
   }
 }
 
 .shell--collapsed {
-  grid-template-columns: var(--sidebar-width-collapsed) minmax(0, 1fr);
+  @include mx.breakpoint-up(xl) {
+    grid-template-columns: var(--sidebar-width-collapsed) minmax(0, 1fr);
+  }
 }
 
 .shell__sidebar {
@@ -25,6 +31,52 @@
   top: 0;
   height: 100vh;
   height: 100dvh;
+
+  // Below xl the sidebar is an off-canvas drawer, hidden from focus while closed.
+  @include mx.breakpoint-down(xl) {
+    position: fixed;
+    left: 0;
+    z-index: var(--z-index-drawer);
+    width: var(--sidebar-width);
+    visibility: hidden;
+    transform: translateX(-100%);
+
+    @include mx.motion-safe {
+      transition:
+        transform var(--duration-medium) ease-out,
+        visibility 0s linear var(--duration-medium);
+    }
+
+    .shell--drawer-open & {
+      visibility: visible;
+      transform: none;
+      transition-delay: 0s;
+    }
+  }
+}
+
+.shell__backdrop {
+  display: none;
+
+  @include mx.breakpoint-down(xl) {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-backdrop);
+    display: block;
+    cursor: default;
+    background-color: var(--color-backdrop);
+    opacity: 0;
+    pointer-events: none;
+
+    @include mx.motion-safe {
+      transition: opacity var(--duration-medium) ease-out;
+    }
+
+    .shell--drawer-open & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 }
 
 .shell__main-column {
@@ -42,6 +94,10 @@
 .shell__content {
   flex: 1;
   padding: var(--space-400) var(--space-600);
+
+  @include mx.breakpoint-down(md) {
+    padding-inline: var(--space-400);
+  }
 
   &:focus {
     outline: none;

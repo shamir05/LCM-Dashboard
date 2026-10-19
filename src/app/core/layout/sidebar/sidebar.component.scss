@@ -43,6 +43,11 @@
   @include mx.motion-safe {
     transition: transform var(--duration-medium) ease-out;
   }
+
+  // In the drawer the button closes the panel, so point it back towards the edge.
+  @include mx.breakpoint-down(xl) {
+    transform: rotate(180deg);
+  }
 }
 
 .sidebar__footer {

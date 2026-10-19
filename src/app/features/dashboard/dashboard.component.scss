@@ -1,3 +1,5 @@
+@use 'mixins' as mx;
+
 :host {
   display: block;
 }
@@ -10,8 +12,12 @@
 
 .dashboard__columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-400);
+
+  @include mx.breakpoint-up(xl) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .dashboard__column {

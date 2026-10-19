@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+// Keep in sync with src/app/core/constants/breakpoints.constants.ts.
 $breakpoints: (
   sm: 480px,
   md: 768px,

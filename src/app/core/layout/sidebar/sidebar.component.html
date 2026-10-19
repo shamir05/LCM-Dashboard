@@ -1,4 +1,10 @@
-<aside id="sidebar" class="sidebar" [attr.aria-label]="labels.sidebar">
+<aside
+  id="sidebar"
+  class="sidebar"
+  [attr.aria-label]="labels.sidebar"
+  [attr.role]="drawerOpen() ? 'dialog' : null"
+  [attr.aria-modal]="drawerOpen() ? true : null"
+>
   <div class="sidebar__header">
     <a class="sidebar__logo" routerLink="/dashboard" [attr.aria-label]="labels.homeLink">
       <img ngSrc="images/logo.svg" width="85" height="28" alt="" priority />
@@ -9,7 +15,7 @@
       leadingIcon="chevrons-right"
       class="sidebar__toggle"
       aria-controls="sidebar"
-      [attr.aria-expanded]="!collapsed()"
+      [attr.aria-expanded]="isCompact() || !collapsed()"
       [attr.aria-label]="toggleLabel()"
       (click)="toggle()"
     ></button>

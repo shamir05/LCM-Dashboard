@@ -13,6 +13,7 @@ export const SIDEBAR_LABELS = {
   homeLink: `${APP_NAME} home`,
   collapse: 'Collapse sidebar',
   expand: 'Expand sidebar',
+  closeNavigation: 'Close navigation',
   mainNav: 'Main',
   secondaryNav: 'Secondary',
   profileOptions: 'Profile options',
@@ -20,6 +21,7 @@ export const SIDEBAR_LABELS = {
 
 export const TOPBAR_LABELS = {
   breadcrumb: 'Breadcrumb',
+  openNavigation: 'Open navigation',
   aiAssistant: 'Ai Assistant',
   search: 'Search',
   notifications: 'Notifications',
