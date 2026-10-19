@@ -13,7 +13,9 @@
   @include mx.breakpoint-down(md) {
     @include mx.thin-scrollbar;
 
-    padding-bottom: var(--space-200);
+    // Room for focus rings, which a scrolling container would otherwise clip.
+    margin: calc(var(--space-100) * -1);
+    padding: var(--space-100) var(--space-100) var(--space-300);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
