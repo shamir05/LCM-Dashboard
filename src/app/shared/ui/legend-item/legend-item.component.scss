@@ -1,0 +1,35 @@
+@use 'typography' as type;
+
+:host {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-150);
+  white-space: nowrap;
+}
+
+.legend-item__dot {
+  flex-shrink: 0;
+  width: var(--space-200);
+  height: var(--space-200);
+  background-color: var(--legend-dot-color, var(--color-text-400));
+  border-radius: var(--radius-full);
+}
+
+.legend-item__label {
+  color: var(--legend-label-color, var(--color-text-600));
+}
+
+.legend-item__count {
+  @include type.text-style(label-s);
+
+  color: var(--color-text-950);
+}
+
+:host(.legend-item--sm) .legend-item__label {
+  @include type.text-style(paragraph-xs);
+}
+
+:host(.legend-item--md) .legend-item__label {
+  @include type.text-style(paragraph-s);
+}

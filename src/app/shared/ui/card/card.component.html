@@ -1,0 +1,10 @@
+<section class="card" [attr.aria-labelledby]="titleId">
+  <header class="card__header">
+    <app-icon class="card__icon" [name]="icon()" [size]="iconSize" />
+    <h2 class="card__title" [id]="titleId">{{ title() }}</h2>
+    <ng-content select="[cardAction]" />
+  </header>
+  <div class="card__body" [id]="bodyId" [hidden]="collapsed()">
+    <ng-content />
+  </div>
+</section>

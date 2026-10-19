@@ -1,5 +1,6 @@
 import { IconName } from '../../../core/models/icon-name.model';
 import { CaseStatus, TaskStatus } from '../../../core/models/status.model';
+import { Trend } from '../../../core/models/trend.model';
 
 export interface Welcome {
   readonly greeting: string;
@@ -10,13 +11,6 @@ export interface Welcome {
 export type KpiTone = 'brand' | 'green' | 'purple' | 'yellow';
 
 export type KpiValueFormat = 'number' | 'currency';
-
-export type TrendDirection = 'up' | 'down';
-
-export interface Trend {
-  readonly direction: TrendDirection;
-  readonly percent: number;
-}
 
 export interface KpiStat {
   readonly id: string;

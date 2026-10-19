@@ -1,0 +1,10 @@
+<app-icon [name]="icon()" [size]="fileIconSize" />
+<span class="file-chip__name" [title]="fileName()">{{ fileName() }}</span>
+<button
+  class="file-chip__download"
+  type="button"
+  [attr.aria-label]="downloadLabel()"
+  (click)="download.emit()"
+>
+  <app-icon name="download" [size]="downloadIconSize" />
+</button>

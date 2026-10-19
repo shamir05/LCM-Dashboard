@@ -1,0 +1,22 @@
+@use 'mixins' as mx;
+
+:host {
+  @include mx.thin-scrollbar;
+  @include mx.focus-ring;
+
+  display: block;
+  min-height: 0;
+  overflow-y: auto;
+  padding-inline-end: var(--space-200);
+  border-radius: var(--radius-12);
+  scrollbar-gutter: stable;
+}
+
+.scroll-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding: var(--space-100);
+  background-color: var(--color-bg-50);
+  border-radius: var(--radius-12);
+}

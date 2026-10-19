@@ -1,0 +1,37 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  @include mx.chip-surface;
+}
+
+.file-chip__name {
+  @include type.text-style(label-s);
+
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-950);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-chip__download {
+  @include mx.focus-ring;
+  @include mx.motion-safe {
+    transition: background-color var(--duration-fast) ease-out;
+  }
+
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: var(--space-50);
+  color: var(--color-icon-950);
+  border-radius: var(--radius-4);
+
+  &:hover {
+    background-color: var(--color-bg-50);
+  }
+
+  &:active {
+    background-color: var(--color-bg-soft-200);
+  }
+}

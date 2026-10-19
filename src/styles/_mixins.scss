@@ -84,3 +84,16 @@ $scrollbar-thumb-inset: 2px;
     background-color: var(--color-text-400);
   }
 }
+
+@mixin chip-surface {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-150);
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--space-100);
+  background-color: var(--color-bg-white);
+  border: var(--border-width-default) solid var(--color-gray-200);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-xs);
+}

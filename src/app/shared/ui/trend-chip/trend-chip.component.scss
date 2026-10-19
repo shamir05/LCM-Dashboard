@@ -1,0 +1,26 @@
+@use 'typography' as type;
+
+:host {
+  @include type.text-style(label-s);
+
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-100);
+  padding: var(--space-50) var(--space-100);
+  border-radius: var(--radius-6);
+  white-space: nowrap;
+}
+
+:host(.trend-chip--up) {
+  color: var(--color-green-500);
+}
+
+:host(.trend-chip--down) {
+  color: var(--color-red-500);
+
+  .trend-chip__arrow {
+    transform: rotate(180deg);
+  }
+}
