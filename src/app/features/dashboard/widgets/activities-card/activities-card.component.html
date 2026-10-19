@@ -1,0 +1,11 @@
+<app-card [title]="card().title" icon="history">
+  <app-bar-chart [chart]="card().chart" />
+
+  <app-scroll-panel class="activities-card__list" [label]="listLabel">
+    @for (activity of card().activities; track activity.id) {
+      <li>
+        <app-activity-item [activity]="activity" />
+      </li>
+    }
+  </app-scroll-panel>
+</app-card>

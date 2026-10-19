@@ -21,7 +21,9 @@
 }
 
 :host(.button--secondary) {
-  padding: var(--space-150) var(--space-200);
+  // Figma draws the border inside the 32px height, so take it out of the padding.
+  padding: calc(var(--space-150) - var(--border-width-control))
+    calc(var(--space-200) - var(--border-width-control));
   color: var(--color-text-950);
   background-color: var(--color-bg-white);
   border: var(--border-width-control) solid var(--color-stroke-200);

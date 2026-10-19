@@ -1,0 +1,17 @@
+<app-card class="cases-card__card" [title]="card().title" icon="briefcase">
+  <a app-button cardAction routerLink="/matters">{{ viewAllLabel }}</a>
+
+  <div class="cases-card__content">
+    <app-donut-chart class="cases-card__chart" [overview]="card().overview" />
+
+    <div class="cases-card__list-area">
+      <app-scroll-panel class="cases-card__list" [label]="listLabel">
+        @for (item of card().cases; track item.id) {
+          <li>
+            <app-case-row [item]="item" />
+          </li>
+        }
+      </app-scroll-panel>
+    </div>
+  </div>
+</app-card>

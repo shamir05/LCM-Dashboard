@@ -16,6 +16,7 @@ describe('LegendItemComponent', () => {
 
     expect(host.querySelector('.legend-item__label')?.textContent).toBe('Active');
     expect(host.querySelector('.legend-item__count')?.textContent).toBe('4');
+    expect(host.textContent?.replace(/\s+/g, ' ').trim()).toBe('Active 4');
   });
 
   it('leaves out the count when none is given', () => {

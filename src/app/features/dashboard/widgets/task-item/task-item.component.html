@@ -1,0 +1,8 @@
+<div class="task-item__text">
+  <p class="task-item__title" [title]="task().title">{{ task().title }}</p>
+  <time class="task-item__date" [attr.datetime]="task().dueDate">
+    {{ task().dueDate | date: dateFormat }}
+  </time>
+</div>
+
+<app-badge [status]="task().status" />

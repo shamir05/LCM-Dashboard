@@ -1,0 +1,96 @@
+@use 'typography' as type;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  padding: var(--space-400);
+  background: var(--gradient-panel-soft), var(--color-bg-white);
+  border: var(--border-width-default) solid var(--color-stroke-200);
+  border-radius: var(--radius-16);
+}
+
+.tasks-overview__summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+}
+
+.tasks-overview__header {
+  @include type.text-style(label-m);
+
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-200);
+}
+
+.tasks-overview__title {
+  font: inherit;
+  color: var(--color-text-950);
+}
+
+.tasks-overview__total {
+  color: var(--color-text-600);
+}
+
+.tasks-overview__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-200);
+}
+
+.tasks-overview__legend-entry {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-200);
+
+  &:not(:last-child)::after {
+    content: '';
+    width: var(--border-width-default);
+    height: var(--space-600);
+    background-color: var(--color-stroke-200);
+  }
+}
+
+.tasks-overview__legend-item {
+  --legend-dot-color: var(--status-color);
+  --legend-label-color: var(--color-text-950);
+
+  padding: var(--space-100) var(--space-200);
+}
+
+.tasks-overview__legend-item--urgent,
+.tasks-overview__segment--urgent {
+  --status-color: var(--color-red-500);
+}
+
+.tasks-overview__legend-item--to-do,
+.tasks-overview__segment--to-do {
+  --status-color: var(--color-text-400);
+}
+
+.tasks-overview__legend-item--in-progress,
+.tasks-overview__segment--in-progress {
+  --status-color: var(--color-green-700);
+}
+
+.tasks-overview__legend-item--on-hold,
+.tasks-overview__segment--on-hold {
+  --status-color: var(--color-yellow-500);
+}
+
+.tasks-overview__bar {
+  display: flex;
+  gap: var(--space-50);
+  height: var(--space-600);
+  overflow: hidden;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-6);
+}
+
+.tasks-overview__segment {
+  flex-basis: 0;
+  background-color: var(--status-color);
+}

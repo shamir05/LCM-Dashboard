@@ -1,0 +1,7 @@
+<ul class="kpi-row">
+  @for (stat of stats(); track stat.id) {
+    <li class="kpi-row__item">
+      <app-stat-card class="kpi-row__card" [stat]="stat" />
+    </li>
+  }
+</ul>

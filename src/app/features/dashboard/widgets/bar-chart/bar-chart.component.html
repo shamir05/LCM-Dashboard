@@ -1,0 +1,80 @@
+<div class="bar-chart__header">
+  <div class="bar-chart__titles">
+    <h3 class="bar-chart__title">{{ title() }}</h3>
+    <p class="bar-chart__subtitle">{{ subtitle() }}</p>
+  </div>
+
+  <ul class="bar-chart__legend">
+    @for (series of chart().series; track series.key) {
+      <li>
+        <app-legend-item
+          size="sm"
+          class="bar-chart__legend-item--{{ series.key }}"
+          [label]="series.label"
+        />
+      </li>
+    }
+  </ul>
+</div>
+
+<div class="bar-chart__body" role="img" [attr.aria-label]="summary()">
+  <div class="bar-chart__y-axis">
+    @for (tick of ticks; track tick) {
+      <span>{{ tick }}</span>
+    }
+  </div>
+
+  <div class="bar-chart__plot">
+    <div class="bar-chart__gridlines">
+      @for (tick of ticks; track tick) {
+        <span class="bar-chart__gridline"></span>
+      }
+    </div>
+
+    <div class="bar-chart__groups">
+      @for (group of groups(); track group.label) {
+        <div class="bar-chart__group">
+          <div class="bar-chart__bars">
+            @for (bar of group.bars; track bar.series) {
+              <span
+                class="bar-chart__bar bar-chart__bar--{{ bar.series }}"
+                [style.height]="bar.height"
+                [title]="bar.tooltip"
+              ></span>
+            }
+          </div>
+          <span class="bar-chart__x-label">{{ group.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<table class="visually-hidden">
+  <caption>
+    {{
+      title()
+    }},
+    {{
+      subtitle()
+    }}
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">{{ labels.dayColumn }}</th>
+      @for (series of chart().series; track series.key) {
+        <th scope="col">{{ series.label }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (group of groups(); track group.label) {
+      <tr>
+        <th scope="row">{{ group.label }}</th>
+        @for (bar of group.bars; track bar.series) {
+          <td>{{ bar.value }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>

@@ -173,13 +173,13 @@ export const EVENTS_CARD: EventsCard = {
   title: 'Upcoming Events',
   selectedDate: '2026-09-08',
   week: [
-    { date: '2026-09-07', eventCount: 0 },
-    { date: '2026-09-08', eventCount: 4 },
-    { date: '2026-09-09', eventCount: 0 },
-    { date: '2026-09-10', eventCount: 2 },
-    { date: '2026-09-11', eventCount: 1 },
-    { date: '2026-09-12', eventCount: 0 },
-    { date: '2026-09-13', eventCount: 0 },
+    '2026-09-07',
+    '2026-09-08',
+    '2026-09-09',
+    '2026-09-10',
+    '2026-09-11',
+    '2026-09-12',
+    '2026-09-13',
   ],
   events: [
     {
@@ -201,6 +201,32 @@ export const EVENTS_CARD: EventsCard = {
       title: 'Court filing deadline: Breach of Contract',
       start: '2026-09-08T14:30:00',
       end: '2026-09-08T17:00:00',
+    },
+    {
+      id: 'event-4',
+      title: 'Weekly case review with the litigation team',
+      start: '2026-09-08T17:30:00',
+      end: '2026-09-08T18:00:00',
+      meetingUrl: 'https://meet.google.com/',
+    },
+    {
+      id: 'event-5',
+      title: 'Deposition preparation: Liam Anderson',
+      start: '2026-09-10T10:00:00',
+      end: '2026-09-10T11:30:00',
+    },
+    {
+      id: 'event-6',
+      title: 'Call with opposing counsel',
+      start: '2026-09-10T15:00:00',
+      end: '2026-09-10T15:30:00',
+      meetingUrl: 'https://meet.google.com/',
+    },
+    {
+      id: 'event-7',
+      title: 'Mediation session: Ethan Carter',
+      start: '2026-09-11T09:30:00',
+      end: '2026-09-11T12:00:00',
     },
   ],
 };

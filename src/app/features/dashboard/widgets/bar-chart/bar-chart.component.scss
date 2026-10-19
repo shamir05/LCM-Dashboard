@@ -1,0 +1,138 @@
+@use 'typography' as type;
+
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  min-width: 0;
+  padding: var(--space-400);
+  background: var(--gradient-panel-top), var(--color-bg-white);
+  border: var(--border-width-default) solid var(--color-stroke-200);
+  border-radius: var(--radius-16);
+}
+
+.bar-chart__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-300) var(--space-400);
+}
+
+.bar-chart__titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+}
+
+.bar-chart__title {
+  @include type.text-style(label-l);
+
+  color: var(--color-text-950);
+}
+
+.bar-chart__subtitle {
+  @include type.text-style(paragraph-s);
+
+  color: var(--color-text-600);
+}
+
+.bar-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-300);
+}
+
+.bar-chart__legend-item--task {
+  --legend-dot-color: var(--color-orange-500);
+}
+
+.bar-chart__legend-item--matter {
+  --legend-dot-color: var(--color-green-700);
+}
+
+.bar-chart__legend-item--document {
+  --legend-dot-color: var(--color-yellow-500);
+}
+
+.bar-chart__body {
+  @include type.text-style(label-xs);
+
+  display: flex;
+  gap: var(--space-300);
+  color: var(--color-text-400);
+}
+
+.bar-chart__y-axis {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-width: var(--space-600);
+  height: var(--size-chart-plot);
+}
+
+.bar-chart__plot {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.bar-chart__gridlines {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: var(--size-chart-plot);
+}
+
+.bar-chart__gridline {
+  border-top: var(--border-width-default) dashed var(--color-stroke-200);
+
+  &:first-child,
+  &:last-child {
+    border-top-style: solid;
+  }
+}
+
+.bar-chart__groups {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-200);
+  padding-inline: var(--space-400);
+}
+
+.bar-chart__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-200);
+}
+
+.bar-chart__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-50);
+  height: var(--size-chart-plot);
+}
+
+.bar-chart__bar {
+  width: var(--size-chart-bar);
+  border-radius: var(--radius-8);
+}
+
+.bar-chart__bar--task {
+  background-color: var(--color-orange-500);
+}
+
+.bar-chart__bar--matter {
+  background-color: var(--color-green-700);
+}
+
+.bar-chart__bar--document {
+  background-color: var(--color-yellow-500);
+}

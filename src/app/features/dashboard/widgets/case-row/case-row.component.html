@@ -1,0 +1,10 @@
+<div class="case-row__info">
+  <div class="case-row__client-line">
+    <a class="case-row__number" [routerLink]="item().route">{{ item().caseNumber }}</a>
+    <span class="case-row__separator" aria-hidden="true"></span>
+    <span class="case-row__client">{{ item().clientName }}</span>
+  </div>
+  <p class="case-row__type">{{ item().caseType }}</p>
+</div>
+
+<app-badge size="sm" [status]="item().status" />

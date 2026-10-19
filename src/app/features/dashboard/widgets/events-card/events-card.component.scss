@@ -1,0 +1,18 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.events-card__list {
+  height: var(--size-list-md);
+}
+
+.events-card__empty {
+  @include mx.list-item-surface;
+  @include type.text-style(paragraph-s);
+
+  color: var(--color-text-600);
+}

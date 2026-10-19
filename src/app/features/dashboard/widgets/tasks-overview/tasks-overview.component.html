@@ -1,0 +1,27 @@
+<div class="tasks-overview__summary">
+  <div class="tasks-overview__header">
+    <h3 class="tasks-overview__title">{{ overview().title }}</h3>
+    <p class="tasks-overview__total">{{ totalText() }}</p>
+  </div>
+
+  <ul class="tasks-overview__legend">
+    @for (segment of segments(); track segment.status) {
+      <li class="tasks-overview__legend-entry">
+        <app-legend-item
+          class="tasks-overview__legend-item tasks-overview__legend-item--{{ segment.status }}"
+          [label]="segment.label"
+          [count]="segment.count"
+        />
+      </li>
+    }
+  </ul>
+</div>
+
+<div class="tasks-overview__bar" aria-hidden="true">
+  @for (segment of segments(); track segment.status) {
+    <span
+      class="tasks-overview__segment tasks-overview__segment--{{ segment.status }}"
+      [style.flex-grow]="segment.count"
+    ></span>
+  }
+</div>

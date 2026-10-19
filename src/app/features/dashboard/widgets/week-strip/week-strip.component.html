@@ -1,0 +1,22 @@
+<ul class="week-strip" [attr.aria-label]="groupLabel">
+  @for (day of view(); track day.date) {
+    <li class="week-strip__item">
+      <button
+        type="button"
+        class="week-strip__day"
+        [class.week-strip__day--selected]="day.selected"
+        [attr.aria-pressed]="day.selected"
+        [attr.aria-label]="day.label"
+        (click)="select(day.date)"
+      >
+        <span class="week-strip__weekday">{{ day.weekday }}</span>
+        <span class="week-strip__date">{{ day.dayOfMonth }}</span>
+        <span class="week-strip__dots">
+          @for (dot of day.dots; track dot) {
+            <span class="week-strip__dot"></span>
+          }
+        </span>
+      </button>
+    </li>
+  }
+</ul>

@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cases-card__card {
+  flex: 1;
+}
+
+.cases-card__content {
+  display: flex;
+  flex: 1;
+  gap: var(--space-300);
+}
+
+.cases-card__chart {
+  flex-shrink: 0;
+}
+
+// The list takes the donut panel's height instead of growing with its rows.
+.cases-card__list-area {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.cases-card__list {
+  position: absolute;
+  inset: 0;
+}

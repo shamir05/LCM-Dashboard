@@ -1,0 +1,20 @@
+@use 'typography' as type;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.welcome-header__title {
+  @include type.text-style(label-l);
+
+  color: var(--color-text-950);
+}
+
+.welcome-header__date {
+  @include type.text-style(paragraph-s);
+
+  color: var(--color-text-600);
+}

@@ -1,0 +1,81 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.week-strip {
+  display: flex;
+  gap: var(--space-300);
+}
+
+.week-strip__item {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.week-strip__day {
+  @include mx.focus-ring;
+  @include mx.motion-safe {
+    transition:
+      background-color var(--duration-fast) ease-out,
+      color var(--duration-fast) ease-out;
+  }
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-200);
+  color: var(--color-text-950);
+  background-color: var(--color-brand-alpha-10);
+  border-radius: var(--radius-8);
+
+  &:hover {
+    background-color: var(--color-brand-alpha-16);
+  }
+}
+
+.week-strip__day--selected {
+  color: var(--color-text-white);
+  background-color: var(--color-brand-500);
+
+  &:hover {
+    background-color: var(--color-brand-500);
+  }
+}
+
+.week-strip__weekday {
+  @include type.text-style(label-xs);
+
+  color: var(--color-text-600);
+  text-transform: uppercase;
+
+  .week-strip__day--selected & {
+    color: var(--color-text-white);
+  }
+}
+
+.week-strip__date {
+  @include type.text-style(label-xl);
+}
+
+.week-strip__dots {
+  display: flex;
+  gap: var(--space-50);
+  padding-top: var(--space-50);
+}
+
+.week-strip__dot {
+  width: var(--size-event-dot);
+  height: var(--size-event-dot);
+  background-color: var(--color-brand-500);
+  border-radius: var(--radius-full);
+
+  .week-strip__day--selected & {
+    background-color: var(--color-text-white);
+  }
+}

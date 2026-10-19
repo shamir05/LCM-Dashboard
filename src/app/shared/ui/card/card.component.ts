@@ -16,6 +16,7 @@ let nextCardId = 0;
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[class.card--ai]': 'tone() === "ai"',
+    '[class.card--collapsed]': 'collapsed()',
   },
 })
 export class CardComponent {

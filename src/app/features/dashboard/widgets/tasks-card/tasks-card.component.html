@@ -1,0 +1,13 @@
+<app-card class="tasks-card__card" [title]="card().title" icon="checklist">
+  <a app-button cardAction routerLink="/tasks">{{ viewAllLabel }}</a>
+
+  <app-tasks-overview [overview]="card().overview" />
+
+  <app-scroll-panel class="tasks-card__list" [label]="listLabel">
+    @for (task of card().tasks; track task.id) {
+      <li>
+        <app-task-item [task]="task" />
+      </li>
+    }
+  </app-scroll-panel>
+</app-card>
