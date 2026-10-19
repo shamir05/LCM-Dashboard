@@ -41,6 +41,7 @@
 
   --color-orange-500: #fa7319;
 
+  --color-purple-500: #746ec7;
   --color-purple-alpha-10: #784def1a;
   --color-purple-alpha-16: #784def29;
 
@@ -78,12 +79,33 @@
   --sidebar-width-collapsed: 4rem;
   --topbar-height: 3.25rem;
 
+  --size-list-sm: 12rem;
+  --size-list-md: 14.5rem;
+  --size-list-lg: 15.25rem;
+  --size-chart-plot: 8.125rem;
+  --size-donut: 11.5rem;
+
   --z-index-sticky: 10;
   --z-index-skip-link: 100;
 
   --shadow-xs: 0 1px 2px #0a0d120d;
 
   --gradient-ai: linear-gradient(89deg, #fae2bd1a 0.2%, #fde9fe 45.5%, #fef2fe 98.9%);
+  --gradient-panel-top: linear-gradient(
+    181deg,
+    var(--color-brand-alpha-10) 9.8%,
+    transparent 98.5%
+  );
+  --gradient-panel-corner: linear-gradient(
+    223deg,
+    var(--color-brand-alpha-10) 26.4%,
+    transparent 75.3%
+  );
+  --gradient-panel-soft: linear-gradient(
+    185deg,
+    var(--color-brand-alpha-10) 26.4%,
+    transparent 75.3%
+  );
 
   --font-family-text: 'Inter', system-ui, sans-serif;
   --font-family-title: 'Urbanist', system-ui, sans-serif;
