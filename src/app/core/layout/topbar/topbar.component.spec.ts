@@ -19,7 +19,7 @@ describe('TopbarComponent', () => {
     const labels = Array.from(element.querySelectorAll('button[aria-label]')).map((button) =>
       button.getAttribute('aria-label'),
     );
-    expect(labels).toEqual(['Search', 'Notifications, 3 unread']);
+    expect(labels).toEqual(['Open navigation', 'Search', 'Notifications, 3 unread']);
     expect(element.querySelector('.topbar__unread-dot')).not.toBeNull();
   });
 });

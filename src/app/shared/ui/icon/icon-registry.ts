@@ -25,6 +25,7 @@ import history from '../../../../assets/icons/history.svg';
 import home from '../../../../assets/icons/home.svg';
 import list from '../../../../assets/icons/list.svg';
 import mail from '../../../../assets/icons/mail.svg';
+import menu from '../../../../assets/icons/menu.svg';
 import moreVertical from '../../../../assets/icons/more-vertical.svg';
 import newspaper from '../../../../assets/icons/newspaper.svg';
 import search from '../../../../assets/icons/search.svg';
@@ -60,6 +61,7 @@ export const ICON_REGISTRY: Readonly<Record<IconName, string>> = {
   home,
   list,
   mail,
+  menu,
   'more-vertical': moreVertical,
   newspaper,
   search,

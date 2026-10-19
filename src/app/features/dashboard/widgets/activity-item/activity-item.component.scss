@@ -8,6 +8,11 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-400);
+
+  @include mx.breakpoint-down(sm) {
+    flex-direction: column;
+    gap: var(--space-200);
+  }
 }
 
 .activity-item__text {
@@ -32,4 +37,8 @@
 .activity-item__attachment {
   flex-shrink: 1;
   max-width: 50%;
+
+  @include mx.breakpoint-down(sm) {
+    max-width: 100%;
+  }
 }

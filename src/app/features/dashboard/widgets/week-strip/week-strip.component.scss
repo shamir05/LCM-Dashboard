@@ -9,12 +9,25 @@
 .week-strip {
   display: flex;
   gap: var(--space-300);
+
+  @include mx.breakpoint-down(md) {
+    @include mx.thin-scrollbar;
+
+    padding-bottom: var(--space-200);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
 }
 
 .week-strip__item {
   display: flex;
   flex: 1;
   min-width: 0;
+
+  @include mx.breakpoint-down(md) {
+    flex: 1 0 var(--size-week-day);
+    scroll-snap-align: start;
+  }
 }
 
 .week-strip__day {

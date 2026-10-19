@@ -2,10 +2,22 @@
   {{ skipLinkLabel }}
 </a>
 
-<div class="shell" [class.shell--collapsed]="sidebarCollapsed()">
+<div
+  class="shell"
+  [class.shell--collapsed]="sidebarCollapsed()"
+  [class.shell--drawer-open]="drawerOpen()"
+>
   <app-sidebar class="shell__sidebar" />
 
-  <div class="shell__main-column">
+  <button
+    class="shell__backdrop"
+    type="button"
+    tabindex="-1"
+    aria-hidden="true"
+    (click)="closeDrawer()"
+  ></button>
+
+  <div class="shell__main-column" [inert]="drawerOpen()">
     <app-topbar class="shell__topbar" />
 
     <main #main id="main-content" class="shell__content" tabindex="-1">

@@ -47,6 +47,8 @@
 
   --color-neutral-alpha-16: #99a0ae29;
 
+  --color-backdrop: #0a0d1252;
+
   --space-0: 0;
   --space-50: 0.125rem;
   --space-100: 0.25rem;
@@ -87,8 +89,11 @@
   --size-donut: 11.5rem;
   --size-separator-dot: 0.1875rem;
   --size-event-dot: 0.3125rem;
+  --size-week-day: 3.5rem;
 
   --z-index-sticky: 10;
+  --z-index-backdrop: 20;
+  --z-index-drawer: 30;
   --z-index-skip-link: 100;
 
   --shadow-xs: 0 1px 2px #0a0d120d;

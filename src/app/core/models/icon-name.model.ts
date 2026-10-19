@@ -25,6 +25,7 @@ export type IconName =
   | 'home'
   | 'list'
   | 'mail'
+  | 'menu'
   | 'more-vertical'
   | 'newspaper'
   | 'search'

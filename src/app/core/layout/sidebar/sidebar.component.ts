@@ -28,15 +28,25 @@ export class SidebarComponent {
   protected readonly footerItems = FOOTER_NAV_ITEMS;
   protected readonly user = CURRENT_USER;
   protected readonly collapsed = this.layout.sidebarCollapsed;
-  protected readonly toggleLabel = computed(() =>
-    this.collapsed() ? SIDEBAR_LABELS.expand : SIDEBAR_LABELS.collapse,
-  );
+  protected readonly isCompact = this.layout.isCompact;
+  protected readonly drawerOpen = this.layout.drawerOpen;
+  protected readonly toggleLabel = computed(() => {
+    if (this.isCompact()) {
+      return SIDEBAR_LABELS.closeNavigation;
+    }
+    return this.collapsed() ? SIDEBAR_LABELS.expand : SIDEBAR_LABELS.collapse;
+  });
 
   protected isGroup(item: NavItem): item is NavGroup {
     return 'children' in item;
   }
 
+  // In the drawer the same button closes it; on desktop it switches to the icon rail.
   protected toggle(): void {
+    if (this.isCompact()) {
+      this.layout.closeDrawer();
+      return;
+    }
     this.layout.toggleSidebar();
   }
 }
