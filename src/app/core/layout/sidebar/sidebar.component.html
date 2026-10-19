@@ -14,4 +14,18 @@
       (click)="toggle()"
     ></button>
   </div>
+
+  <nav class="sidebar__nav" [attr.aria-label]="labels.mainNav">
+    <ul class="sidebar__nav-list">
+      @for (item of mainItems; track item.label) {
+        <li>
+          @if (isGroup(item)) {
+            <app-nav-group [group]="item" />
+          } @else {
+            <app-nav-item [link]="item" />
+          }
+        </li>
+      }
+    </ul>
+  </nav>
 </aside>

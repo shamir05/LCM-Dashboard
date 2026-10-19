@@ -1,0 +1,48 @@
+@use 'mixins' as mx;
+@use '../nav';
+
+:host {
+  display: block;
+}
+
+.nav-group__toggle {
+  @include nav.row;
+
+  &[aria-expanded='true'] {
+    color: var(--color-text-950);
+  }
+}
+
+.nav-group__label {
+  @include nav.label;
+}
+
+.nav-group__chevron {
+  @include mx.motion-safe {
+    transition: transform var(--duration-medium) ease-out;
+  }
+
+  color: var(--color-icon-950);
+
+  [aria-expanded='true'] > & {
+    transform: rotate(180deg);
+  }
+}
+
+.nav-group__list[hidden] {
+  display: none;
+}
+
+:host(.nav-group--collapsed) {
+  .nav-group__toggle {
+    @include nav.collapsed-row;
+  }
+
+  .nav-group__label {
+    @include mx.visually-hidden;
+  }
+
+  .nav-group__chevron {
+    display: none;
+  }
+}

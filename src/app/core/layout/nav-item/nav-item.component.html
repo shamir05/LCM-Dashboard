@@ -1,0 +1,13 @@
+<a
+  class="nav-item"
+  [class.nav-item--nested]="!link().icon"
+  [routerLink]="link().route"
+  routerLinkActive="nav-item--active"
+  ariaCurrentWhenActive="page"
+  [attr.title]="collapsed() ? link().label : null"
+>
+  @if (link().icon; as icon) {
+    <app-icon [name]="icon" />
+  }
+  <span class="nav-item__label">{{ link().label }}</span>
+</a>

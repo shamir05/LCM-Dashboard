@@ -13,6 +13,7 @@ export const SIDEBAR_LABELS = {
   homeLink: `${APP_NAME} home`,
   collapse: 'Collapse sidebar',
   expand: 'Expand sidebar',
+  mainNav: 'Main',
 } as const;
 
 export const DOWNLOAD_LABEL = 'Download';
