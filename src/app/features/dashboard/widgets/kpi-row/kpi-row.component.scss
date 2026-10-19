@@ -12,6 +12,10 @@
   background-color: var(--color-bg-50);
   border-radius: var(--radius-16);
 
+  @include mx.breakpoint-down(sm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   @include mx.breakpoint-up(xl) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

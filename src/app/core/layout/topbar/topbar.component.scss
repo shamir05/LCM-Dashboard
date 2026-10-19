@@ -82,6 +82,12 @@
   gap: var(--space-200);
 }
 
+.topbar__assistant-label {
+  @include mx.breakpoint-down(md) {
+    @include mx.visually-hidden;
+  }
+}
+
 .topbar__notifications {
   position: relative;
 }

@@ -1,3 +1,5 @@
+@use 'mixins' as mx;
+
 :host {
   display: flex;
   flex-direction: column;
@@ -12,6 +14,10 @@
   display: flex;
   flex: 1;
   gap: var(--space-300);
+
+  @include mx.breakpoint-down(md) {
+    flex-direction: column;
+  }
 }
 
 .cases-card__chart {
@@ -23,9 +29,18 @@
   position: relative;
   flex: 1;
   min-width: 0;
+
+  @include mx.breakpoint-down(md) {
+    position: static;
+  }
 }
 
 .cases-card__list {
   position: absolute;
   inset: 0;
+
+  @include mx.breakpoint-down(md) {
+    position: static;
+    height: var(--size-list-md);
+  }
 }
