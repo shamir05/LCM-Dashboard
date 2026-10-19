@@ -116,7 +116,7 @@ export interface EventItem {
 export interface EventsCard {
   readonly title: string;
   readonly selectedDate: string;
-  readonly week: readonly WeekDay[];
+  readonly week: readonly string[];
   readonly events: readonly EventItem[];
 }
 

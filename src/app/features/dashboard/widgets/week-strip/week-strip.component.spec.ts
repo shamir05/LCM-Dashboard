@@ -2,10 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { EVENTS_CARD } from '../../data/dashboard.mock';
 import { WeekStripComponent } from './week-strip.component';
 
+const WEEK = EVENTS_CARD.week.map((date, index) => ({ date, eventCount: index === 1 ? 4 : 0 }));
+
 describe('WeekStripComponent', () => {
   function render() {
     const fixture = TestBed.createComponent(WeekStripComponent);
-    fixture.componentRef.setInput('days', EVENTS_CARD.week);
+    fixture.componentRef.setInput('days', WEEK);
     fixture.componentRef.setInput('selectedDate', EVENTS_CARD.selectedDate);
     fixture.detectChanges();
     const buttons = Array.from<HTMLButtonElement>(fixture.nativeElement.querySelectorAll('button'));

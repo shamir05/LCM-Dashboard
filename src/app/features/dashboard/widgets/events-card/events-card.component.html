@@ -1,0 +1,15 @@
+<app-card [title]="card().title" icon="calendar">
+  <a app-button cardAction routerLink="/calendar">{{ calendarLabel }}</a>
+
+  <app-week-strip [days]="weekDays()" [(selectedDate)]="selectedDate" />
+
+  <app-scroll-panel class="events-card__list" [label]="listLabel">
+    @for (event of visibleEvents(); track event.id) {
+      <li>
+        <app-event-item [event]="event" />
+      </li>
+    } @empty {
+      <li class="events-card__empty">{{ emptyLabel }}</li>
+    }
+  </app-scroll-panel>
+</app-card>
