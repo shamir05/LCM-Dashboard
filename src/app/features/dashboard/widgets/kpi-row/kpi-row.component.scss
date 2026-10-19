@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-200);
+  padding: var(--space-150);
+  background-color: var(--color-bg-50);
+  border-radius: var(--radius-16);
+}
+
+.kpi-row__item {
+  display: flex;
+  min-width: 0;
+}
+
+.kpi-row__card {
+  flex: 1;
+}
