@@ -1,0 +1,69 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  @include mx.list-item-surface;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-200);
+  border-bottom: var(--border-width-default) solid var(--color-stroke-200);
+}
+
+.case-row__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.case-row__client-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-150);
+  min-width: 0;
+}
+
+.case-row__number {
+  @include type.text-style(label-xs);
+  @include mx.focus-ring;
+
+  flex-shrink: 0;
+  color: var(--color-brand-500);
+  text-decoration: underline;
+  text-underline-position: from-font;
+  border-radius: var(--radius-4);
+
+  &:hover {
+    color: var(--color-brand-700);
+  }
+}
+
+.case-row__separator {
+  flex-shrink: 0;
+  width: var(--size-separator-dot);
+  height: var(--size-separator-dot);
+  background-color: var(--color-text-400);
+  border-radius: var(--radius-full);
+}
+
+.case-row__client {
+  @include type.text-style(label-s);
+
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-950);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.case-row__type {
+  @include type.text-style(paragraph-xs);
+
+  overflow: hidden;
+  color: var(--color-text-600);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
