@@ -14,11 +14,11 @@
 }
 
 :host(.trend-chip--up) {
-  color: var(--color-green-500);
+  color: var(--color-green-800);
 }
 
 :host(.trend-chip--down) {
-  color: var(--color-red-500);
+  color: var(--color-red-700);
 
   .trend-chip__arrow {
     transform: rotate(180deg);
