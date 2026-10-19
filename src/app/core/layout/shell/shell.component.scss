@@ -107,6 +107,7 @@
 .shell__skip-link {
   @include type.text-style(label-s);
   @include mx.visually-hidden;
+  @include mx.focus-ring;
 
   &:focus-visible {
     position: fixed;
@@ -123,6 +124,5 @@
     white-space: nowrap;
     background-color: var(--color-brand-700);
     border-radius: var(--radius-8);
-    outline: none;
   }
 }

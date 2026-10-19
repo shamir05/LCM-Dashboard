@@ -37,10 +37,10 @@ export const ACTION_LABELS = {
 } as const;
 
 export const LIST_LABELS = {
-  activities: 'Recent activities',
-  cases: 'Recent cases',
-  events: 'Events for the selected day',
-  tasks: 'Upcoming tasks',
+  activities: 'Activity list',
+  cases: 'Case list',
+  events: 'Event list for the selected day',
+  tasks: 'Task list',
 } as const;
 
 export const EVENT_LABELS = {

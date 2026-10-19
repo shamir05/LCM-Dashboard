@@ -26,7 +26,7 @@
 }
 
 :host(.badge--active) {
-  color: var(--color-green-700);
+  color: var(--color-green-800);
   background-color: var(--color-green-alpha-16);
 }
 
@@ -36,7 +36,7 @@
 }
 
 :host(.badge--on-hold) {
-  color: var(--color-yellow-700);
+  color: var(--color-yellow-800);
   background-color: var(--color-yellow-alpha-10);
 }
 

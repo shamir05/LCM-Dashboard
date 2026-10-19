@@ -57,7 +57,7 @@
 .topbar__breadcrumb-link {
   @include mx.focus-ring;
 
-  color: var(--color-text-400);
+  color: var(--color-text-500);
   border-radius: var(--radius-4);
 
   &:hover {

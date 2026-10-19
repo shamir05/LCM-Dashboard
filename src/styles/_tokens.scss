@@ -49,6 +49,11 @@
 
   --color-backdrop: #0a0d1252;
 
+  // Not in Figma: darker text variants so small text meets WCAG AA (4.5:1).
+  --color-brand-600: #b15f48;
+  --color-yellow-800: #8e6d1f;
+  --color-text-500: #6d6d6d;
+
   --space-0: 0;
   --space-50: 0.125rem;
   --space-100: 0.25rem;
