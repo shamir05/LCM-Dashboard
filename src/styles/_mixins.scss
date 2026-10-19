@@ -97,3 +97,9 @@ $scrollbar-thumb-inset: 2px;
   border-radius: var(--radius-6);
   box-shadow: var(--shadow-xs);
 }
+
+@mixin list-item-surface {
+  padding: var(--space-300);
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-8);
+}

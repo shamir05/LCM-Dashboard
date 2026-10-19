@@ -1,0 +1,35 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  @include mx.list-item-surface;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-400);
+}
+
+.activity-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.activity-item__description {
+  @include type.text-style(paragraph-m);
+
+  color: var(--color-text-950);
+}
+
+.activity-item__time {
+  @include type.text-style(paragraph-s);
+
+  color: var(--color-text-600);
+}
+
+.activity-item__attachment {
+  flex-shrink: 1;
+  max-width: 50%;
+}

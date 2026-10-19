@@ -1,0 +1,12 @@
+<div class="activity-item__text">
+  <p class="activity-item__description">{{ activity().description }}</p>
+  <p class="activity-item__time">{{ activity().timeLabel }}</p>
+</div>
+
+@if (link(); as link) {
+  <a app-link-chip class="activity-item__attachment" [routerLink]="link.route">
+    {{ link.label }}
+  </a>
+} @else if (file(); as file) {
+  <app-file-chip class="activity-item__attachment" [fileName]="file.fileName" />
+}
