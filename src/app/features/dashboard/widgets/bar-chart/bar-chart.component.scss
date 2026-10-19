@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: var(--space-300);
   min-width: 0;
-  padding: var(--space-400);
+  padding: calc(var(--space-400) - var(--border-width-default));
   background: var(--gradient-panel-top), var(--color-bg-white);
   border: var(--border-width-default) solid var(--color-stroke-200);
   border-radius: var(--radius-16);

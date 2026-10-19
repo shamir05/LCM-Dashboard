@@ -1,3 +1,4 @@
+@use 'mixins' as mx;
 @use 'typography' as type;
 
 :host {
@@ -6,20 +7,31 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
   background-color: var(--color-bg-white);
-  border: var(--border-width-default) solid var(--color-stroke-200);
   border-radius: var(--radius-12);
+
+  // Drawn as an overlay so the border sits inside the card size, as in Figma.
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: var(--border-width-default) solid var(--card-border-color, var(--color-stroke-200));
+    border-radius: inherit;
+    pointer-events: none;
+  }
 }
 
 .card__header {
   display: flex;
   align-items: center;
   gap: var(--space-200);
-  padding: var(--space-300);
+  @include mx.inset-border-padding(var(--space-300), var(--space-300));
+
   background-color: var(--color-bg-50);
   border-bottom: var(--border-width-default) solid var(--color-stroke-200);
 }
@@ -55,7 +67,7 @@
 :host(.card--ai) {
   .card {
     background: var(--gradient-ai);
-    border-color: var(--color-stroke-alpha-8);
+    --card-border-color: var(--color-stroke-alpha-8);
   }
 
   .card__header {

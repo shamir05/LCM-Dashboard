@@ -1,3 +1,4 @@
+@use 'mixins' as mx;
 @use 'typography' as type;
 
 :host {
@@ -37,14 +38,15 @@
   display: flex;
   align-items: center;
   gap: var(--space-200);
-  padding: var(--space-200) var(--space-300);
+  @include mx.inset-border-padding(var(--space-200), var(--space-300));
+
   border-bottom: var(--border-width-default) solid var(--color-stroke-200);
 }
 
 .stat-card__icon-tile {
   display: flex;
   flex-shrink: 0;
-  padding: var(--space-150);
+  padding: calc(var(--space-150) - var(--border-width-default));
   color: var(--tone-icon);
   background-color: var(--tone-background);
   border: var(--border-width-default) solid var(--tone-border);

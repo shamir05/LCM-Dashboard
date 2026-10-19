@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-200);
+  padding-bottom: calc(var(--space-300) - var(--border-width-default));
   border-bottom: var(--border-width-default) solid var(--color-stroke-200);
 }
 

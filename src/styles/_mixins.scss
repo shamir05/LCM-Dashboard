@@ -86,6 +86,12 @@ $scrollbar-thumb-inset: 2px;
   }
 }
 
+// Figma draws borders inside an element's height; trim the padding so CSS sizes match.
+@mixin inset-border-padding($block, $inline, $side: bottom) {
+  padding: $block $inline;
+  padding-#{$side}: calc(#{$block} - var(--border-width-default));
+}
+
 @mixin chip-surface {
   display: inline-flex;
   align-items: center;

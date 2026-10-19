@@ -11,7 +11,7 @@
   justify-content: space-between;
   gap: var(--space-400);
   min-height: var(--topbar-height);
-  padding: var(--space-200) var(--space-800);
+  @include mx.inset-border-padding(var(--space-200), var(--space-800));
   background-color: var(--color-bg-white);
   border-bottom: var(--border-width-default) solid var(--color-stroke-200);
 
