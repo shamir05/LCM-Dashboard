@@ -1,0 +1,64 @@
+@use 'mixins' as mx;
+@use 'typography' as type;
+
+:host {
+  display: block;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.shell__sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.shell__main-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.shell__topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+}
+
+.shell__content {
+  flex: 1;
+  padding: var(--space-400) var(--space-600);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.shell__skip-link {
+  @include type.text-style(label-s);
+  @include mx.visually-hidden;
+
+  &:focus-visible {
+    position: fixed;
+    top: var(--space-200);
+    left: var(--space-200);
+    z-index: var(--z-index-skip-link);
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: var(--space-200) var(--space-300);
+    overflow: visible;
+    clip-path: none;
+    color: var(--color-text-white);
+    white-space: nowrap;
+    background-color: var(--color-brand-700);
+    border-radius: var(--radius-8);
+    outline: none;
+  }
+}

@@ -1,23 +1,19 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
 
 describe('App', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [App],
-    }).compileComponents();
+  beforeEach(() => {
+    TestBed.configureTestingModule({ providers: [provideRouter([])] });
   });
 
-  it('should create the app', () => {
+  it('renders the shell landmarks', () => {
     const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+    fixture.detectChanges();
+    const element: HTMLElement = fixture.nativeElement;
 
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, lcm-dashboard');
+    expect(element.querySelector('aside')).not.toBeNull();
+    expect(element.querySelector('header')).not.toBeNull();
+    expect(element.querySelector('main')).not.toBeNull();
   });
 });

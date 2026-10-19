@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-bg-white);
+  border-right: var(--border-width-default) solid var(--color-stroke-200);
+}

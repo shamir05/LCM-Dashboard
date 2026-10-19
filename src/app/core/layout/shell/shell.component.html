@@ -1,0 +1,15 @@
+<a class="shell__skip-link" href="#main-content" (click)="skipToContent($event)">
+  {{ skipLinkLabel }}
+</a>
+
+<div class="shell">
+  <app-sidebar class="shell__sidebar" />
+
+  <div class="shell__main-column">
+    <app-topbar class="shell__topbar" />
+
+    <main #main id="main-content" class="shell__content" tabindex="-1">
+      <router-outlet />
+    </main>
+  </div>
+</div>
