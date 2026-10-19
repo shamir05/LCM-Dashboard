@@ -3,6 +3,7 @@
 
 :host {
   @include type.text-style(paragraph-s);
+  @include mx.chip-surface;
   @include mx.focus-ring;
   @include mx.motion-safe {
     transition:
@@ -10,17 +11,7 @@
       color var(--duration-fast) ease-out;
   }
 
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-150);
-  min-width: 0;
-  max-width: 100%;
-  padding: var(--space-100);
   color: var(--color-brand-500);
-  background-color: var(--color-bg-white);
-  border: var(--border-width-default) solid var(--color-gray-200);
-  border-radius: var(--radius-6);
-  box-shadow: var(--shadow-xs);
 
   &:hover {
     color: var(--color-brand-700);
