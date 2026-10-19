@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tasks-card__card {
+  flex: 1;
+}
+
+// Fills any spare height so the column lines up with its neighbour.
+.tasks-card__list {
+  flex: 1 1 0;
+  min-height: var(--size-list-sm);
+}
