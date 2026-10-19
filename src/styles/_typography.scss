@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+// Letter-spacing values are Figma percentages converted to em.
+$text-styles: (
+  title-h4: (family: title, weight: 500, size: 2rem, line-height: 2.5rem, letter-spacing: 0.005em),
+  title-h5: (family: title, weight: 500, size: 1.5rem, line-height: 1.625rem, letter-spacing: 0),
+  title-h6: (family: title, weight: 540, size: 1.25rem, line-height: 1.75rem, letter-spacing: 0),
+  label-xl: (family: text, weight: 500, size: 1.5rem, line-height: 2rem, letter-spacing: -0.015em),
+  label-l: (family: text, weight: 500, size: 1.125rem, line-height: 1.5rem, letter-spacing: -0.015em),
+  label-m: (family: text, weight: 500, size: 1rem, line-height: 1.5rem, letter-spacing: -0.011em),
+  label-s: (family: text, weight: 500, size: 0.875rem, line-height: 1.25rem, letter-spacing: -0.006em),
+  label-xs: (family: text, weight: 500, size: 0.75rem, line-height: 1rem, letter-spacing: 0),
+  paragraph-m: (family: text, weight: 432, size: 1rem, line-height: 1.5rem, letter-spacing: -0.011em),
+  paragraph-s: (family: text, weight: 424, size: 0.875rem, line-height: 1.25rem, letter-spacing: -0.002em),
+  paragraph-xs: (family: text, weight: 424, size: 0.75rem, line-height: 1rem, letter-spacing: 0),
+);
+
+@mixin text-style($name) {
+  @if not map.has-key($text-styles, $name) {
+    @error 'Unknown text style `#{$name}`.';
+  }
+
+  $style: map.get($text-styles, $name);
+
+  font-family: var(--font-family-#{map.get($style, family)});
+  font-weight: map.get($style, weight);
+  font-size: map.get($style, size);
+  line-height: map.get($style, line-height);
+  letter-spacing: map.get($style, letter-spacing);
+}
